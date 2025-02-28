@@ -9,6 +9,7 @@
         <Column field="location" header="Asukoht" style="color: black;"/>
         <Column field="date" header="Kuupäev" style="color: black;"/>
       </DataTable>
+      
       <div v-else>Sündmused puuduvad</div>
     </div>
   </div>

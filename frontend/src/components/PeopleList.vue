@@ -1,6 +1,10 @@
 <template>
     <div class="about">
         <h1>Peoplelist</h1>
+        <form @submit="">
+            <input v-model="" placeholder="">
+            
+        </form>
         <div class="peoplelist">
             <DataTable :value="peoples" v-if="peoples.length > 0">
                 <Column field="id" header="Inimese id" style="color: black;" />
@@ -27,13 +31,15 @@
         }
     }, { deep: true });
 
-    defineProps<{ name : String }>();
+    defineProps<{ title : String }>();
     const peoplesStore = usePeoplesStore();
     const { peoples } = storeToRefs(peoplesStore);
 
     onMounted(async () => {
         peoplesStore.load();
     });
+
+
 </script>
 <style>
 

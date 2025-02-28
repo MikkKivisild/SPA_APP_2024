@@ -6,5 +6,5 @@ export interface People
 }
 export interface State
 {
-    people: People[];
+    peoples: People[];
 }
