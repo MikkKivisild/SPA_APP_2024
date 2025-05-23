@@ -2,7 +2,7 @@ export interface People
 {
     id: number;
     name: string;
-    A: string;
+    age: number;
 }
 export interface State
 {

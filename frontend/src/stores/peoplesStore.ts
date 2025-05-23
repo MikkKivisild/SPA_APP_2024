@@ -25,7 +25,7 @@ export const usePeoplesStore = defineStore('peoplesStore', () => {
     };
 
     const addPeople = async (people: People) => {
-        const apiAddPeole = useApi<People>('events', {
+        const apiAddPeole = useApi<People>('peoples', {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
@@ -57,7 +57,7 @@ export const usePeoplesStore = defineStore('peoplesStore', () => {
 
 
     const deletePeople = async (people: People) => {
-        const deletePeopleRequest = useApiRawRequest(`event/${people.id}`, {
+        const deletePeopleRequest = useApiRawRequest(`people/${people.id}`, {
             method: 'DELETE'
         });
 
