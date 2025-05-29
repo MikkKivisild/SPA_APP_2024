@@ -38,6 +38,10 @@
     import { defineProps, onMounted, watch, ref } from "vue";
     import { useRoute } from "vue-router";
 
+    defineProps<{ title: String }>();
+    const peoplesStore = usePeoplesStore();
+    const { peoples } = storeToRefs(peoplesStore);
+
     interface People {
         id: number;
         name: string;
@@ -61,14 +65,17 @@
             ...newPerson.value
         });
         newPerson.value = { name: "", age: ""};
+        peoplesStore.addPeople(newPerson);
     };
 
     const deletePerson = (id: number) => {
         persons.value = persons.value.filter(p => p.id !== id);
+        peoplesStore.deletePeople(newPerson);
     };
 
     const editPerson = (people: People) => {
         editingPerson.value = { ...people };
+        peoplesStore.updatePeople(newPerson);
     };
 
     const updatePerson = () => {
@@ -81,8 +88,3 @@
     };
 
 </script>
-<style>
-.button {
-    background-color: blueviolet;
-}
-</style>

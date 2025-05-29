@@ -6,6 +6,6 @@ namespace Backend.Model
     {
         public int Id { get; set; }
         public string? Name { get; set; }
-        public string? A {  get; set; }
+        public string? Age {  get; set; }
     }
 }
