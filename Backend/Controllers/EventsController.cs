@@ -1,10 +1,13 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using backend.Model;
+using Microsoft.AspNetCore.Authorization;
 
 namespace backend.Controllers;
 
-[ApiController] [Route("api/[controller]")] 
+[ApiController] [Route("api/[controller]")]
+[Authorize]
+
 public class EventsController : ControllerBase {
     private readonly DataContext context;
     public EventsController(DataContext c)  {
